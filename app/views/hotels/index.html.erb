@@ -4,8 +4,8 @@
     <section>
       <h1>
 
-      	<%= @hotels.each do |hotel|
-      	@hotels.name %>
+      	<%= 
+      		@hotels.each_with_index {|(key,value), i| puts "Pair #{i}: key #{key} value #{value}" }%>
       </h1>
       </section>
   </aside>

@@ -1,5 +1,9 @@
 class HotelsController < ApplicationController
   def index
-  	@hotels = User.all
+  	@hotels = Hotel.all
+  	@hotels.each do |h|
+      	@hotel = h.title
+      	puts @hotel
+      	end
   end
 end
