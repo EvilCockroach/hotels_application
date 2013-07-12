@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 attr_accessible :name, :email, :password, :password_confirmation
+
 has_secure_password
+has_many :user_hotels
+  has_many :hotels, through: :user_hotels
 
   before_save { email.downcase! }
   before_save :create_remember_token
