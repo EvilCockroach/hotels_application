@@ -1,4 +1,4 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'New hotel') %>
 <h1>Add a hotel</h1>
 
 <div class="row">
@@ -8,11 +8,15 @@
 <%= form_tag :action => 'create' %>
 
 <p>
-  Hotel title:
+  Hotel title (necessary):
   <%= text_field :hotel, :title %>
 </p>
-<fieldset>
-<legend>Please fill in the address</legend>  
+<p>
+  Rate this hotel (necessary):
+  <%= text_field :hotel, :star_rating %>
+</p>
+
+Please fill in the address  
 <p>
   Country:
   <%= text_field :address, :country %>
@@ -29,11 +33,11 @@
   Street:
   <%= text_field :address, :street %>
 </p>
-</fieldset>
+
 <p>
   <%= submit_tag 'Create' , class: "btn btn-large btn-primary" %>
 </p>
-<%= end_form_tag %>
+<%= form_tag %>
 
 
   </div>

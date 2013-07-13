@@ -1,0 +1,11 @@
+<% provide(:title, @hotel.title) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+      	<%= @hotel.title %>
+      </h1>
+      <h2> <% if hotel.address.blank? return "blank" else return "not blank" %> <h2>
+      </section>
+  </aside>
+</div>

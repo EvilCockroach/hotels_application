@@ -3,6 +3,7 @@ HotelsApp::Application.routes.draw do
   get "hotels/new"
 
   resources :users
+  resources :hotels
 resources :sessions, only: [:new, :create, :destroy]
 
  root to: 'static_pages#home'
