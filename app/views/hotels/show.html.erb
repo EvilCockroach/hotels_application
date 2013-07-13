@@ -5,7 +5,14 @@
       <h1>
       	<%= @hotel.title %>
       </h1>
-      <h2> <% if hotel.address.blank? return "blank" else return "not blank" %> <h2>
+      	<h2> <% if !@hotel.address.blank? 
+      		
+      		@hotel.address.each_pair do |key,value| 
+      			 %> 
+		 This hotels is placed in:
+		 <%=  @hotel.address[key] %>
+		 <% end end %>
+		<h2>
       </section>
   </aside>
 </div>

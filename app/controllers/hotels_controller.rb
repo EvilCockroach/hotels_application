@@ -1,15 +1,18 @@
 class HotelsController < ApplicationController
   def index
-  	@hotels = Hotel.all
+    @hotels = Hotel.all
   end
 
   def show
     @hotel = Hotel.find(params[:id])
-  end
+   
+  
+end
+ 
 
   def new
-  	@hotel = Hotel.new
-  	@address = Address.new
+    @hotel = Hotel.new
+    @address = Address.new
   end
 
   def create
@@ -17,7 +20,7 @@ class HotelsController < ApplicationController
     @hotel.address = Address.new(params[:address])
       
   if @hotel.save
-  	
+    
     
     redirect_to @hotel
   else
