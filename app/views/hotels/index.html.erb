@@ -2,11 +2,14 @@
 <div class="row">
   <aside class="span4">
     <section>
-      <h1>
+      <h3>
 
-      	<%= 
-      		@hotels.each_with_index {|(key,value), i| puts "Pair #{i}: key #{key} value #{value}" }%>
-      </h1>
+      	
+      	<%  @hotels.each do |h|  %>
+      	<%= h.title %>
+      	<br>
+      	<% end %>
+      </h3>
       </section>
   </aside>
 </div>

@@ -1,5 +1,6 @@
 HotelsApp::Application.routes.draw do
   get "hotels/index"
+  get "hotels/new"
 
   resources :users
 resources :sessions, only: [:new, :create, :destroy]
