@@ -6,5 +6,5 @@ class Hotel < ActiveRecord::Base
   has_many :users, through: :user_hotels
   	validates :title, presence: true, 
  					length: { maximum: 50 }
-	validates :star_rating, presence: true
+	
 end

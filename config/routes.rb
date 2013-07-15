@@ -1,12 +1,17 @@
 HotelsApp::Application.routes.draw do
-  get "hotels/index"
+  #get "hotels/index"
   get "hotels/new"
+#put '/hotels/:id/details' => 'hotels#details', :as => 'hotel_details'
+#link_to 'hotel_details', hotel_details_path(hotels.id)
 
   resources :users
   resources :hotels
 resources :sessions, only: [:new, :create, :destroy]
 
  root to: 'static_pages#home'
+  
+ #match '/details', to: 'hotels#show'
+ match '/update', to: 'hotels#update'
  match '/hotels',  to: 'hotels#index'
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

@@ -5,8 +5,9 @@
       <h3>
 
       	We have information about these hotels
+
       	<%  @hotels.each do |h|  %>
-      	<%= h.title %>
+      	<%= link_to h.title, hotel_path(h.id) %>
       	<br>
       	<% end %>
       </h3>

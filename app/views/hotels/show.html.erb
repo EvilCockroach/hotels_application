@@ -1,18 +1,22 @@
 <% provide(:title, @hotel.title) %>
 <div class="row">
-  <aside class="span4">
+ 
     <section>
       <h1>
       	<%= @hotel.title %>
       </h1>
-      	<h2> <% if !@hotel.address.blank? 
-      		
-      		@hotel.address.each_pair do |key,value| 
-      			 %> 
-		 This hotels is placed in:
-		 <%=  @hotel.address[key] %>
-		 <% end end %>
+      	<h2> <% if !@address2.blank?     %>
+      		<%=  "Address:" %>
+
+      		<%= @address2  %> 
+		 	<%  else %>
+		 <%= "We have no address yet for this hotel. You can add it here:" %>
+			
+
+			
+<%  end %>
+		
 		<h2>
       </section>
-  </aside>
+ 
 </div>
