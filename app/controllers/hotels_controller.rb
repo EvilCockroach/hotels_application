@@ -52,11 +52,15 @@ end
 def update 
 
   @hotel = Hotel.find(params[:id])
- 
-  if @hotel.update_attributes(params[:hotel])
+@user_hotel = 
+@hotel.star_rating -= UserHotel.find_by_hotel_id(params[:id])[:rating]
+  if @hotel.update_attributes(params[:hotel]) 
+     @user_hotel.update_attributes(params[:user_hotel])
+
     flash[:success] = "Information updated"
     redirect_to @hotel
   else
+    @hotel.star_rating += @user_hotel.rating
     render 'edit'
   end
 end

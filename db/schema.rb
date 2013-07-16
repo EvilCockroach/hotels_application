@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130712105241) do
+ActiveRecord::Schema.define(:version => 20130716155949) do
 
   create_table "addresses", :force => true do |t|
     t.string   "country"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(:version => 20130712105241) do
   create_table "hotels", :force => true do |t|
     t.string   "title"
     t.float    "star_rating"
-    t.integer  "rates_count"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "rates_count"
   end
 
   create_table "photos", :force => true do |t|
