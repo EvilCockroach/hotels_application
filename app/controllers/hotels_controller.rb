@@ -26,15 +26,17 @@ end
   def new
     @hotel = Hotel.new
     @address = Address.new
-    @user_hotel = UserHotel.new
+    @userhotel = UserHotel.new
   end
 
   def create
-    @hotel = Hotel.new(params[:hotel])
+
+    @hotel = Hotel.new(params[:hotel].merge(:star_rating => params[:user_hotel][:rating]))
     @hotel.address = Address.new(params[:address])
-    @hotel.user_hotel = UserHotel.new(params[:user_hotel])
       
   if @hotel.save
+    @user_hotel = UserHotel.new(params[:user_hotel].merge(:hotel_id => @hotel[:id], :user_id => current_user.id))
+    @user_hotel.save
     
     
     redirect_to @hotel
@@ -47,10 +49,12 @@ def edit
   @hotel = Hotel.find(params[:id])
 end
 
-def update
+def update 
+
   @hotel = Hotel.find(params[:id])
  
-  if @hotel.update(params[:hotel].permit(:title))
+  if @hotel.update_attributes(params[:hotel])
+    flash[:success] = "Information updated"
     redirect_to @hotel
   else
     render 'edit'
