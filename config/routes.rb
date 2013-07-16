@@ -1,6 +1,7 @@
 HotelsApp::Application.routes.draw do
   #get "hotels/index"
-  get "hotels/new"
+  #get "hotels/new"
+  #get '/hotel/:id', to: 'hotels#show', as: 'hotel'
  
 #put '/hotels/:id/details' => 'hotels#details', :as => 'hotel_details'
 #link_to 'hotel_details', hotel_details_path(hotels.id)

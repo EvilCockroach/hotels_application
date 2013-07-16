@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130712105241) do
   create_table "hotels", :force => true do |t|
     t.string   "title"
     t.float    "star_rating"
+    t.integer  "rates_count"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

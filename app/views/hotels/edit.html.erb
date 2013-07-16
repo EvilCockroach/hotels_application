@@ -1,4 +1,4 @@
-<%= simple_form_for @hotel do |f| %>
+<%= form_for(@hotel, url: hotel_path(@hotel), html: { method: :PUT }) do |f| %>
   <% if @hotel.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited
@@ -13,6 +13,10 @@
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :user_hotel, :rating %><br>
+    <%= text_field :user_hotel, :rating %>
   </p>
  
 <!-- hidden_field_tag :model_id, params[:model_id] -->
